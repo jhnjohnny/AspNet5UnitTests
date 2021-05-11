@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNet5UnitTests
+namespace AspNet5UnitTests.App
 {
     public class Program
     {

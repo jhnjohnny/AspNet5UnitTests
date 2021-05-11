@@ -1,8 +1,8 @@
 using System;
 
-namespace AspNet5UnitTests
+namespace AspNet5UnitTests.App.Models
 {
-    public class WeatherForecast
+    public class WeatherForecastModel
     {
         public DateTime Date { get; set; }
 
