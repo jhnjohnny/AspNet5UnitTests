@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet5UnitTests", "AspNet5UnitTests.csproj", "{DBF9B317-BA82-4223-A20E-CD4B84024634}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNet5UnitTests.App", "AspNet5UnitTests.App\AspNet5UnitTests.App.csproj", "{DBF9B317-BA82-4223-A20E-CD4B84024634}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet5UnitTests.Tests", "AspNet5UnitTests.Tests\AspNet5UnitTests.Tests.csproj", "{DD571225-B2A3-48C2-87E9-3D712AC88299}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DBF9B317-BA82-4223-A20E-CD4B84024634}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBF9B317-BA82-4223-A20E-CD4B84024634}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBF9B317-BA82-4223-A20E-CD4B84024634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD571225-B2A3-48C2-87E9-3D712AC88299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD571225-B2A3-48C2-87E9-3D712AC88299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD571225-B2A3-48C2-87E9-3D712AC88299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD571225-B2A3-48C2-87E9-3D712AC88299}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
