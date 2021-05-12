@@ -20,10 +20,11 @@ namespace AspNet5UnitTests.Tests.Controllers
     {
         private PessoaFisicaController _controller;
         private IPessoaService<PessoaFisica> _pessoaService;
-        private readonly RepositorieDbContext _repositorieDbContext;
-        private readonly Mock<IContaService<ContaCorrente>> _mockContaService;
+        private RepositorieDbContext _repositorieDbContext;
+        private Mock<IContaService<ContaCorrente>> _mockContaService;
 
-        public PessoaFisicaControllerTest()
+        [TestInitialize]
+        public void Initialize()
         {
             var fakeDbContext = new FakeDbContext();
             _repositorieDbContext = fakeDbContext.GetContext();

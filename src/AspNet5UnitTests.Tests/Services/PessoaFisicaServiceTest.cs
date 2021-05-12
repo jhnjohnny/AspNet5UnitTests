@@ -15,10 +15,11 @@ namespace AspNet5UnitTests.Tests.Services
     public class PessoaFisicaServiceTest
     {
         private PessoaFisicaService _service;
-        private readonly RepositorieDbContext _repositorieDbContext;
-        private readonly Mock<IContaService<ContaCorrente>> _mockContaService;
+        private RepositorieDbContext _repositorieDbContext;
+        private Mock<IContaService<ContaCorrente>> _mockContaService;
 
-        public PessoaFisicaServiceTest()
+        [TestInitialize]
+        public void Initialize()
         {
             var fakeDbContext = new FakeDbContext();
             _repositorieDbContext = fakeDbContext.GetContext();
@@ -70,6 +71,21 @@ namespace AspNet5UnitTests.Tests.Services
             _service.BuscarIdPessoa(idPessoa);
 
             // Assert
+        }
+
+        [TestMethod]
+        public void RetornarIdadePessoaPorId_OK()
+        {
+            // Arrange
+            var idPessoa = 1;
+
+            // Act
+            _service = new PessoaFisicaService(_repositorieDbContext, _mockContaService.Object);
+            var result = _service.CalcularIdadeIdPessoa(idPessoa);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(25, result);
         }
 
 

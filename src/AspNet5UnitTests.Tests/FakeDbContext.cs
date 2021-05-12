@@ -38,7 +38,7 @@ namespace AspNet5UnitTests.Tests
                         IdPessoa = 1,
                         NomeCompleto = "Teste Fulano Completo",
                         CPF = "123456789",
-                        DataNasc = DateTime.Now,
+                        DataNasc = DateTime.Now.AddYears(-25),
                         Email = "teste.email@email.com",
                         Telefone = "99554512"
                     }
@@ -50,7 +50,7 @@ namespace AspNet5UnitTests.Tests
                         IdPessoa = 2,
                         NomeEmpresa = "Empresa Teste",
                         CNPJ = "034567000180",
-                        DataNasc = DateTime.Now,
+                        DataNasc = DateTime.Now.AddYears(-10),
                         Email = "teste.email@email.com",
                         Telefone = "2021554"
                     }

@@ -37,9 +37,9 @@ namespace AspNet5UnitTests.App.Controllers
 
         [HttpGet]
         [Route("BuscarIdPessoa/{IdPessoa}")]
-        public PessoaJuridica BuscarIdPessoa(int IdPessoa)
+        public PessoaJuridica BuscarIdPessoa(int idPessoa)
         {
-            return _pessoaService.BuscarIdPessoa(IdPessoa);
+            return _pessoaService.BuscarIdPessoa(idPessoa);
         }
 
     }

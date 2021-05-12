@@ -18,10 +18,11 @@ namespace AspNet5UnitTests.Tests.Services
     public class PessoaJuridicaServiceTest
     {
         private PessoaJuridicaService _service;
-        private readonly RepositorieDbContext _repositorieDbContext;
-        private readonly Mock<IContaService<ContaCorrente>> _mockContaService;
+        private RepositorieDbContext _repositorieDbContext;
+        private Mock<IContaService<ContaCorrente>> _mockContaService;
 
-        public PessoaJuridicaServiceTest()
+        [TestInitialize]
+        public void Initialize()
         {
             var fakeDbContext = new FakeDbContext();
             _repositorieDbContext = fakeDbContext.GetContext();

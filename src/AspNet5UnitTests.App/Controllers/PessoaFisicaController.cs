@@ -38,18 +38,24 @@ namespace AspNet5UnitTests.App.Controllers
 
         [HttpGet]
         [Route("BuscarIdPessoa/{IdPessoa}")]
-        public PessoaFisica BuscarIdPessoa(int IdPessoa)
+        public PessoaFisica BuscarIdPessoa(int idPessoa)
         {
-            return _pessoaService.BuscarIdPessoa(IdPessoa);
+            return _pessoaService.BuscarIdPessoa(idPessoa);
         }
 
         [HttpGet]
         [Route("SaldoIdPessoa/{IdPessoa}")]
-        public Decimal SaldoIdPessoa(int IdPessoa)
+        public Decimal SaldoIdPessoa(int idPessoa)
         {
-            return _pessoaService.SaldoIdPessoa(IdPessoa);
+            return _pessoaService.SaldoIdPessoa(idPessoa);
         }
 
+        [HttpGet]
+        [Route("IdadeIdPessoa/{IdPessoa}")]
+        public int IdadeIdPessoa(int idPessoa)
+        {
+            return _pessoaService.CalcularIdadeIdPessoa(idPessoa);
+        }
 
     }
 }

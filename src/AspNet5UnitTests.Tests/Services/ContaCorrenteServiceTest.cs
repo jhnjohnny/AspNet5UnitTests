@@ -15,9 +15,10 @@ namespace AspNet5UnitTests.Tests.Services
     public class ContaCorrenteServiceTest
     {
         private ContaCorrenteService _service;
-        private readonly RepositorieDbContext _repositorieDbContext;
+        private RepositorieDbContext _repositorieDbContext;
 
-        public ContaCorrenteServiceTest()
+        [TestInitialize]
+        public void Initialize()
         {
             var fakeDbContext = new FakeDbContext();
             _repositorieDbContext = fakeDbContext.GetContext();

@@ -33,7 +33,7 @@ namespace AspNet5UnitTests.App.Repositories
                         IdPessoa = 1,
                         NomeCompleto = "Fulano Completo",
                         CPF = "123456789",
-                        DataNasc = DateTime.Now,
+                        DataNasc = DateTime.Now.AddYears(-25),
                         Email = "email@email.com",
                         Telefone = "99554512"
                     }
@@ -45,7 +45,7 @@ namespace AspNet5UnitTests.App.Repositories
                         IdPessoa = 2,
                         NomeEmpresa = "Empresa Fulano",
                         CNPJ = "034567000180",
-                        DataNasc = DateTime.Now,
+                        DataNasc = DateTime.Now.AddYears(-10),
                         Email = "email@email.com",
                         Telefone = "2021554"
                     }

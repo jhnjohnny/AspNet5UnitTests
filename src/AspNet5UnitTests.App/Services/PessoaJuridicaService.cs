@@ -21,18 +21,31 @@ namespace AspNet5UnitTests.App.Services
             _repositorieDbContext.InsertDadosTest(); // Apenas para testes
         }
 
-        public PessoaJuridica BuscarIdPessoa(int IdPessoa)
+        public PessoaJuridica BuscarIdPessoa(int idPessoa)
         {
-            var result = _repositorieDbContext.PessoasJuridicas.FirstOrDefault(x => x.IdPessoa == IdPessoa);
+            var result = _repositorieDbContext.PessoasJuridicas.FirstOrDefault(x => x.IdPessoa == idPessoa);
 
             return result;
         }
 
-        public PessoaJuridica BuscarPessoa(PessoaJuridica Pessoa)
+        public PessoaJuridica BuscarPessoa(PessoaJuridica pessoa)
         {
-            var result = _repositorieDbContext.PessoasJuridicas.Find(Pessoa.IdPessoa);
+            var result = _repositorieDbContext.PessoasJuridicas.Find(pessoa.IdPessoa);
 
             return result;
+        }
+
+        public int CalcularIdadeIdPessoa(int idPessoa)
+        {
+            var dataNasc = _repositorieDbContext.PessoasJuridicas.Find(idPessoa).DataNasc;
+
+            var idade = CalcularIdade(dataNasc);
+
+            return idade;
+        }
+        private int CalcularIdade(DateTime dateTime)
+        {
+            return DateTime.Now.Year - dateTime.Year;
         }
 
         public List<PessoaJuridica> ListarPessoas()
@@ -42,9 +55,9 @@ namespace AspNet5UnitTests.App.Services
             return result;
         }
 
-        public Decimal SaldoIdPessoa(int IdPessoa)
+        public Decimal SaldoIdPessoa(int idPessoa)
         {
-            var result = _contaCorrenteService.SaldoIdPessoa(IdPessoa);
+            var result = _contaCorrenteService.SaldoIdPessoa(idPessoa);
 
             return result;
         }

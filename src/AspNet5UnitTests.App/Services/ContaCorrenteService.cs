@@ -20,32 +20,32 @@ namespace AspNet5UnitTests.App.Services
         }
 
 
-        public ContaCorrente BuscarIdConta(int IdConta)
+        public ContaCorrente BuscarIdConta(int idConta)
         {
-            var result = _repositorieDbContext.ContaCorrentes.FirstOrDefault(x => x.IdConta == IdConta);
+            var result = _repositorieDbContext.ContaCorrentes.FirstOrDefault(x => x.IdConta == idConta);
 
             return result;
         }
 
-        public ContaCorrente BuscarIdPessoa(int IdPessoa)
+        public ContaCorrente BuscarIdPessoa(int idPessoa)
         {
-            var result = _repositorieDbContext.ContaCorrentes.FirstOrDefault(x => x.IdPessoa == IdPessoa);
+            var result = _repositorieDbContext.ContaCorrentes.FirstOrDefault(x => x.IdPessoa == idPessoa);
 
             return result;
         }
 
-        public Decimal SaldoIdPessoa(int IdPessoa)
+        public Decimal SaldoIdPessoa(int idPessoa)
         {
-            var result = _repositorieDbContext.ContaCorrentes.FirstOrDefault(x => x.IdPessoa == IdPessoa);
+            var result = _repositorieDbContext.ContaCorrentes.FirstOrDefault(x => x.IdPessoa == idPessoa);
 
             if (result == null) return 0;
 
             return result.Saldo;
         }
 
-        public ContaCorrente BuscarConta(ContaCorrente Conta)
+        public ContaCorrente BuscarConta(ContaCorrente conta)
         {
-            var result = _repositorieDbContext.ContaCorrentes.Find(Conta.IdConta);
+            var result = _repositorieDbContext.ContaCorrentes.Find(conta.IdConta);
 
             return result;
         }

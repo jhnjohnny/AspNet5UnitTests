@@ -12,5 +12,6 @@ namespace AspNet5UnitTests.App.Interfaces
         T BuscarPessoa(T Pessoa);
         List<T> ListarPessoas();
         Decimal SaldoIdPessoa(int IdPessoa);
+        int CalcularIdadeIdPessoa(int IdPessoa);
     }
 }
