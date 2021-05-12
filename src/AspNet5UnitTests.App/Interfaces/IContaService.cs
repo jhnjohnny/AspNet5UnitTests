@@ -1,16 +1,19 @@
-﻿using AspNet5UnitTests.App.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNet5UnitTests.App.Models;
 
 namespace AspNet5UnitTests.App.Interfaces
 {
-    public interface IPessoaService<T>  //<out R, in E>
+    public interface IContaService<T>
     {
+        T BuscarIdConta(int IdConta);
+
         T BuscarIdPessoa(int IdPessoa);
-        T BuscarPessoa(T Pessoa);
-        List<T> ListarPessoas();
+
         Decimal SaldoIdPessoa(int IdPessoa);
+
+        T BuscarConta(T Conta);
     }
 }

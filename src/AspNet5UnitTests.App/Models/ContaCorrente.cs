@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace AspNet5UnitTests.App.Models
 {
-    public class PessoaJuridica : Pessoa
+    public class ContaCorrente : Conta
     {
-        public String CNPJ { get; set; }
+        public Decimal Saldo { get; set; }
 
-        public String NomeEmpresa { get; set; }
+        //public Decimal ChequeEspecial { get; set; }
     }
 }

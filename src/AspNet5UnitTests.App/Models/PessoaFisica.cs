@@ -8,6 +8,6 @@ namespace AspNet5UnitTests.App.Models
     public class PessoaFisica : Pessoa
     {
         public String CPF { get; set; }
-        public String Sexo { get; set; }
+        public String NomeCompleto { get; set; }
     }
 }

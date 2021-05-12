@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace AspNet5UnitTests.App.Models
 {
-    public class Pessoa
+    public class Conta
     {
         [Key]
+        public int IdConta { get; set; }
         public int IdPessoa { get; set; }
-        public String Email { get; set; }
-        public String Telefone { get; set; }
-        public DateTime DataNasc { get; set; }
+        public String Agencia { get; set; }
+        public String Numero { get; set; }
+        public String Digito { get; set; }
     }
 }

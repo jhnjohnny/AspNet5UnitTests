@@ -1,57 +1,62 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AspNet5UnitTests.App.Models;
-using Microsoft.EntityFrameworkCore.Internal;
+using AspNet5UnitTests.App.Repositories;
+using Microsoft.EntityFrameworkCore;
 
-namespace AspNet5UnitTests.App.Repositories
+namespace AspNet5UnitTests.Tests
 {
     [ExcludeFromCodeCoverage]
-    public class RepositorieDbContext : DbContext
+    public class FakeDbContext
     {
-        public RepositorieDbContext(DbContextOptions<RepositorieDbContext> options) : base(options)
-        {
+        private RepositorieDbContext _dbContext;
 
+        public FakeDbContext()
+        {
+            var options = new DbContextOptionsBuilder<RepositorieDbContext>()
+                .UseInMemoryDatabase("FakeDB")
+                .Options;
+
+            _dbContext = new RepositorieDbContext(options);
+
+            InsertDadosTest();
         }
 
-
-        public DbSet<PessoaFisica> PessoasFisicas { get; set; }
-        public DbSet<PessoaJuridica> PessoasJuridicas { get; set; }
-        public DbSet<ContaCorrente> ContaCorrentes { get; set; }
-
+        public RepositorieDbContext GetContext() => _dbContext;
 
         public void InsertDadosTest()
         {
-            if (this.Database.EnsureCreated())
+            if(_dbContext.Database.EnsureCreated())
             {
-                this.PessoasFisicas.Add(
+                _dbContext.PessoasFisicas.Add(
                     new PessoaFisica()
                     {
                         IdPessoa = 1,
-                        NomeCompleto = "Fulano Completo",
+                        NomeCompleto = "Teste Fulano Completo",
                         CPF = "123456789",
                         DataNasc = DateTime.Now,
-                        Email = "email@email.com",
+                        Email = "teste.email@email.com",
                         Telefone = "99554512"
                     }
                 );
 
-                this.PessoasJuridicas.Add(
+                _dbContext.PessoasJuridicas.Add(
                     new PessoaJuridica()
                     {
                         IdPessoa = 2,
-                        NomeEmpresa = "Empresa Fulano",
+                        NomeEmpresa = "Empresa Teste",
                         CNPJ = "034567000180",
                         DataNasc = DateTime.Now,
-                        Email = "email@email.com",
+                        Email = "teste.email@email.com",
                         Telefone = "2021554"
                     }
                 );
 
-                this.ContaCorrentes.Add(
+                _dbContext.ContaCorrentes.Add(
                     new ContaCorrente()
                     {
                         IdConta = 1,
@@ -63,9 +68,8 @@ namespace AspNet5UnitTests.App.Repositories
                     }
                 );
 
-                this.SaveChanges();
+                _dbContext.SaveChanges();
             }
         }
-
     }
 }
